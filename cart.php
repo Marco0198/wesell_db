@@ -213,7 +213,8 @@ $total_price += ($product["price"]*$product["quantity"]);
 ?>
 <tr>
 <td colspan="5" align="right">
-<strong>TOTAL: <?php echo "R".$total_price; ?></strong>
+<strong>TOTAL: <?php echo "R".$total_price; ?><a href="checkout.php"><br><button class="btn btn-danger" type='submit' class='remove'>Checkout
+</button></a></strong>
 </td>
 </tr>
 </tbody>
