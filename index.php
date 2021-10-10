@@ -126,7 +126,7 @@
   </div> <!-- End mainmenu area -->
     
     <div class="slider-area">
-        	<!-- Slider -->
+        	<!-- Slider 
 			<div class="block-slider block-slider4">
 				<ul class="" id="bxslider-home4">
 					<li>
@@ -139,14 +139,7 @@
 							<a class="caption button-radius" href="#"><span class="icon"></span>Buy now</a>
 						</div>
 					</li>
-					<li><img src="img/h4-slide2.png" alt="Slide">
-						<div class="caption-group">
-							<h2 class="caption title">
-								Buy one and get<span class="primary"><strong> 50% off</strong></span>
-							</h2>
-							<h4 class="caption subtitle">Stationary and backpacks.*</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Buy now</a>
-						</div>
+				
 					</li>
 					<li><img src="img/h4-slide3.png" alt="Slide">
 						<div class="caption-group">
@@ -167,7 +160,7 @@
 						</div>
 					</li>
 				</ul>
-			</div>
+			</div>-->
 			<!-- ./Slider -->
     </div> <!-- End slider area -->
     
