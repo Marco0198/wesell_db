@@ -127,8 +127,8 @@
                <div class="login-form" >
                    <div class="loginText"><h2>Sign In</h2></div>
                    <form action="login_action.php" method="post">
-                    <input type="text"placeholder="enter your useer name" name="userName" required >
-                    <input type="password" placeholder="password" name="password" required >
+                    <input type="text"placeholder="User name" name="userName" required >
+                    <input type="password" placeholder="Password" name="password" required >
                     <a href="register.php" style="margin-right: 15px; float: right">Register</a><br>
                     <input type="submit" value="Login" name="login">
                  
