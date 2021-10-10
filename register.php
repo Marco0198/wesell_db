@@ -130,9 +130,9 @@
     <div class="login-form" method="post">
         <div class="loginText"><h2>Sign up</h2></div>
      <form action="register_action.php" method="POST">
-        <input type="text"placeholder="name" name="userName" required >
-        <input type="email"placeholder="Email Address" name="email" required >
-         <input type="password" placeholder="password" name="password" required >
+        <input type="text"placeholder="Name" name="userName" required >
+        <input type="email"placeholder="Email address" name="email" required >
+         <input type="password" placeholder="Password" name="password" required >
          <input type="password" placeholder=" Confirm  password" name="passwordConfirmation" required >
          <input type="submit" value="register" name="submit">
          
