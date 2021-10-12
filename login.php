@@ -129,8 +129,8 @@
                 <form action="">
                     <input type="email"placeholder="Email Address" name="email" required >
                     <input type="password" placeholder="password" name="password" required >
-                    <a href="register.html" style="margin-right: 15px; float: right">Register</a><br>
-                    <a href="register.html" style=" float: right;margin-top: 15px; margin-right: 15px">Forgot Password</a>
+                    <a href="register.php" style="margin-right: 15px; float: right">Register</a><br>
+                    <a href="register.php" style=" float: right;margin-top: 15px; margin-right: 15px">Forgot Password</a>
                     <input type="submit" value="Login" name="login">
                  
                 </form>
