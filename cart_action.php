@@ -1,4 +1,5 @@
 <?php
+// i added card action
 include './cart.php';
 include './db.php';
 if (isset($_POST['checkout'])) {
