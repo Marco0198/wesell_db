@@ -27,7 +27,7 @@ else{
    
     if ($row['passwordConfirmation']!==$passwordConf) {
     echo "<script type='text/javascript'>alert('wrong password');</script>";
-    header('Location: login.php');
+   // header('Location: login.php');
      echo "wrong password";
   
 }
