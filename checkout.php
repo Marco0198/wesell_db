@@ -1,3 +1,25 @@
+<?php
+include 'db.php';
+// session_start();
+
+// $product_id = null;
+// $actual_amount = null;
+// $quanty = null;
+
+// $sql_get_product_id = "SELECT product_id,quanty,actual_amount FROM oderdetail ORDER BY product_id DESC LIMIT 1";
+
+// if ($result = $con->query($sql_get_product_id)) {
+//     while ($row = $result->fetch_row()) {
+//         $product_id = $row[0];
+//         $quanty = $row[1];
+//         $actual_amount = $row[2];
+
+//     }
+// } else {
+//     echo $con->error;
+// }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -413,15 +435,15 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" value="" placeholder="" id="billing_first_name"
-                                    name="billing_first_name" class="input-text ">
+                                    name="billing_first_name" class="input-text " required>
                             </p>
 
                             <p id="billing_last_name_field" class="form-row form-row-last validate-required">
                                 <label class="" for="billing_last_name">Last Name <abbr title="required"
-                                        class="required">*</abbr>
+                                        class="required"></abbr>
                                 </label>
                                 <input type="text" value="" placeholder="" id="billing_last_name"
-                                    name="billing_last_name" class="input-text ">
+                                    name="billing_last_name" class="input-text " required>
                             </p>
                             <div class="clear"></div>
 
@@ -432,12 +454,12 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" value="" placeholder="Street address" id="billing_address_1"
-                                    name="billing_address_1" class="input-text ">
+                                    name="billing_address_1" class="input-text " required>
                             </p>
 
                             <p id="billing_address_2_field" class="form-row form-row-wide address-field">
                                 <input type="text" value="" placeholder="Apartment, suite, unit etc. (optional)"
-                                    id="billing_address_2" name="billing_address_2" class="input-text ">
+                                    id="billing_address_2" name="billing_address_2" class="input-text " required>
                             </p>
 
                             <p id="billing_city_field" class="form-row form-row-wide address-field validate-required"
@@ -446,7 +468,7 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" value="" placeholder="Town / City" id="billing_city"
-                                    name="billing_city" class="input-text ">
+                                    name="billing_city" class="input-text " required>
                             </p>
 
                             <p id="billing_state_field" class="form-row form-row-first address-field validate-state"
@@ -462,7 +484,7 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" value="" placeholder="Postcode / Zip" id="billing_postcode"
-                                    name="billing_postcode" class="input-text ">
+                                    name="billing_postcode" class="input-text " required>
                             </p>
 
                             <div class="clear"></div>
@@ -473,7 +495,7 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" value="" placeholder="" id="billing_email" name="billing_email"
-                                    class="input-text ">
+                                    class="input-text " required>
                             </p>
 
                             <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
@@ -481,11 +503,11 @@
                                         class="required">*</abbr>
                                 </label>
                                 <input type="text" class="form-control" value="" placeholder="" id="billing_phone"
-                                    name="billing_phone" class="input-text ">
+                                    name="billing_phone" class="input-text " required>
                             </p>
                             <div class="clear"></div>
                             <input type="submit" data-value="bill_save" value="Save address" id="bill_save"
-                                name="woocommerce_bill_insert" class="form-control"><br>
+                                name="woocommerce_bill_insert" class="form-control" required><br>
 
 
                         </form>
@@ -505,8 +527,9 @@
                             <form action="payment.php" method="post">
                                 <ul class="payment_methods methods">
                                     <li class="payment_method_bacs">
-                                        <input type="radio" data-order_button_text="" checked="checked" value="bacs"
-                                            name="payment_method" class="input-radio" id="payment_method_bacs">
+                                        <input type="radio" data-order_button_text="" checked="checked"
+                                            value="Bank Deposit" name="payment_method" class="input-radio"
+                                            id="payment_method_bacs">
                                         <label for="payment_method_bacs">Direct Bank Transfer </label>
                                         <div class="payment_box payment_method_bacs">
                                             <p>Make your payment directly into our bank account. Please use your
@@ -523,6 +546,12 @@
                                                 Store State / County, Store Postcode.</p>
                                         </div>
                                     </li>
+                                    <li class="payment_cash_on_delivery">
+                                        <input type="radio" data-order_button_text="" value="COD" name="payment_method"
+                                            class="input-radio" id="payment_method_cheque">
+                                        <label for="payment_method_cheque">Cash on delivery</label>
+
+                                    </li>
                                     <li class="payment_method_paypal">
                                         <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal"
                                             name="payment_method" class="input-radio" id="payment_method_paypal">
@@ -531,7 +560,7 @@
                                                 title="What is PayPal?"
                                                 onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"
                                                 class="about_paypal"
-                                                href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What
+                                                href="https://www.paypalg.com/gb/webapps/mpp/paypal-popup">What
                                                 is
                                                 PayPal?</a>
                                         </label>
@@ -548,13 +577,6 @@
                                 </div>
                                 <br><br>
                                 <div class="clear"></div>
-
-                                <!-- <script>
-                                            function submitForm() {
-                                                document.contact - form.submit();
-                                                document.contact - form.reset();
-                                            }
-                                            </script> -->
                             </form>
                         </div>
 
@@ -563,51 +585,53 @@
 
                 <div id="customer_details" class="col2-set">
                     <div class="col-md-12">
-
                         <h3 id="order_review_heading">Your order</h3>
                         <div id="order_review" style="position: relative;">
-                            <table class="shop_table">
-                                <thead>
-                                    <tr>
-                                        <th class="product-name">Product</th>
-                                        <th class="product-total">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="cart_item">
-                                        <td class="product-name">
-                                            Product <strong class="product-quantity">× 1</strong> </td>
-                                        <td class="product-total">
-                                            <span class="amount">R415.00</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
+                            <form action="cart_action.php" method="post">
+                                <table class="shop_table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-total">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="cart_item">
+                                            <td class="product-name">
+                                                <strong class="Slim Fit T-shirts">Slim Fit T-shirts × 2</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <?php echo $total ?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
 
-                                    <tr class="cart-subtotal">
-                                        <th>Cart Subtotal</th>
-                                        <td><span class="amount">R415.00</span>
-                                        </td>
-                                    </tr>
+                                        <tr class="cart-subtotal">
+                                            <th>Cart Subtotal</th>
+                                            <td><span class="amount"><?php echo 440.6; ?> </span>
+                                            </td>
+                                        </tr>
 
-                                    <tr class="shipping">
-                                        <th>Shipping and Handling</th>
-                                        <td>
+                                        <tr class="shipping">
+                                            <th>Shipping and Handling</th>
+                                            <td>
 
-                                            Free Shipping
-                                            <input type="hidden" class="shipping_method" value="free_shipping"
-                                                id="shipping_method_0" data-index="0" name="shipping_method[0]">
-                                        </td>
-                                    </tr>
+                                                Free Shipping
+                                                <input type="hidden" class="shipping_method" value="free_shipping"
+                                                    id="shipping_method_0" data-index="0" name="shipping_method[0]">
+                                            </td>
+                                        </tr>
 
 
-                                    <tr class="order-total">
-                                        <th>Order Total
-                                        </th>
-                                        <td><strong><span class="amount">R415.00</span></strong> </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                                        <tr class="order-total">
+                                            <th>Order Total
+                                            </th>
+                                            <td><strong><?php echo $total ?></strong> </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -983,27 +1007,27 @@
                                 </form>
                             </div>
                         </div>
+                        <!-- </div -->
                     </div>
-                </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'>
-                </script>
-                <script src="./script.js"></script>
-                <!-- Latest jQuery form server -->
-                <script src="https://code.jquery.com/jquery.min.js"></script>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'>
+                    </script>
+                    <script src="./script.js"></script>
+                    <!-- Latest jQuery form server -->
+                    <script src="https://code.jquery.com/jquery.min.js"></script>
 
-                <!-- Bootstrap JS form CDN -->
-                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
-                </script>
+                    <!-- Bootstrap JS form CDN -->
+                    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+                    </script>
 
-                <!-- jQuery sticky menu -->
-                <script src="js/owl.carousel.min.js"></script>
-                <script src="js/jquery.sticky.js"></script>
+                    <!-- jQuery sticky menu -->
+                    <script src="js/owl.carousel.min.js"></script>
+                    <script src="js/jquery.sticky.js"></script>
 
-                <!-- jQuery easing -->
-                <script src="js/jquery.easing.1.3.min.js"></script>
+                    <!-- jQuery easing -->
+                    <script src="js/jquery.easing.1.3.min.js"></script>
 
-                <!-- Main Script -->
-                <script src="js/main.js"></script>
+                    <!-- Main Script -->
+                    <script src="js/main.js"></script>
 </body>
 
 </html>

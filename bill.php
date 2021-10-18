@@ -24,7 +24,8 @@ if (isset($_POST['woocommerce_bill_insert'])) {
     $result = mysqli_query($con, $sql);
 
     if ($result == true) {
-        echo "New record created successfully.";
+        echo "<script>alert('Billing info saved')</script>";
+        echo "<script type='text/javascript'> document.location ='checkout.php'; </script>";
     } else {
         echo "Error:" . $sql . "<br>" . $con->error;
     }

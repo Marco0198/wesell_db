@@ -30,6 +30,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
     }
 
 }
+
 ?>
 <html lang="en">
 
@@ -165,7 +166,7 @@ if (!empty($_SESSION["shopping_cart"])) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>card</h2>
+                        <h2>cart</h2>
                     </div>
                 </div>
             </div>
@@ -191,6 +192,8 @@ if (isset($_SESSION["shopping_cart"])) {
                     </tr>
                     <?php
 foreach ($_SESSION["shopping_cart"] as $product) {
+        // $product_id = $_POST['product_id'];
+
         ?>
                     <tr>
                         <td><img src='<?php echo $product["image"]; ?>' width="120" height="120" /></td>
@@ -202,7 +205,7 @@ foreach ($_SESSION["shopping_cart"] as $product) {
                             </form>
                         </td>
                         <td>
-                            <form method='post' action=''>
+                            <form method='post' action='cart_action.php'>
                                 <input type='hidden' name='code' value="<?php echo $product["code"]; ?>" />
                                 <input type='hidden' name='action' value="change" />
                                 <select name='quantity' class='quantity' onchange="this.form.submit()">
@@ -263,6 +266,8 @@ $total_price += ($product["price"] * $product["quantity"]);
 
 
         <br /><br />
+
+
     </div>
     <div class="footer-top-area">
         ©2021
