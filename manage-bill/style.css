@@ -1,0 +1,50 @@
+.container h2 {
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.table {
+    border: 1px solid rgb(252, 235, 235);
+    box-shadow: 5px 10px 18px #f0e1e1ef;
+}
+
+td {
+    border: 1px solid rgb(252, 235, 235);
+}
+
+th {
+    border: 1px solid rgb(252, 235, 235);
+}
+
+.bill-form {
+    width: 500px;
+    height: 500px;
+    background: color(#fff);
+    margin: auto;
+    text-align: center;
+    box-shadow: 5px 10px 18px #f0e1e1ef;
+}
+
+select {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    border: 1px solid rgb(190, 188, 188);
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    border: 1px solid rgb(190, 188, 188);
+}
+
+input[type="submit"] {
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    background: #5a88ca;
+    border: 1px #5a88ca;
+}
